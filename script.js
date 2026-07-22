@@ -137,7 +137,8 @@ function addTransaction(){
 data.push({
     name,
     amount,
-    type
+    type,
+    date: new Date().toISOString()
 });
 
 saveData();
@@ -230,6 +231,10 @@ function calculate(){
     }
 
 }
+
+window.addEventListener("beforeunload", () => {
+    sessionStorage.removeItem("financeSession");
+});
 
 saveData();
 render();
