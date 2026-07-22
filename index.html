@@ -13,9 +13,26 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
+
 <body>
 
+<script>
+
+if(!sessionStorage.getItem("financeSession")){
+    window.location.replace("login.html");
+}
+
+</script>
+
 <div class="container">
+
+<div class="top-actions">
+
+    <button class="graph-btn" onclick="window.location.href='chart.html'">
+        📊 Lihat Grafik
+    </button>
+
+</div>
 
 <div class="header">
 <h1>Finance Manager</h1>
@@ -109,43 +126,55 @@ onkeyup="render()">
 <script src="script.js"></script>
 
 
-<div class="box">
+    </div>
 
-<h2>🧮 Kalkulator</h2>
+    <div class="box">
 
-<div class="calculator-box">
+        <h2>🧮 Kalkulator</h2>
 
-    <input type="text" id="calcDisplay" readonly value="0">
+        <div class="calculator-box">
 
-    <div class="calculator">
+            <input
+                type="text"
+                id="calcDisplay"
+                readonly
+                value="0">
 
-        <button class="operator" onclick="clearCalc()">AC</button>
-        <button class="operator" onclick="backspace()">⌫</button>
-        <button class="operator" onclick="calc('%')">%</button>
-        <button class="operator" onclick="calc('/')">÷</button>
+            <div class="calculator">
 
-        <button onclick="calc('7')">7</button>
-        <button onclick="calc('8')">8</button>
-        <button onclick="calc('9')">9</button>
-        <button class="operator" onclick="calc('*')">×</button>
+                <button class="operator" onclick="clearCalc()">AC</button>
+                <button class="operator" onclick="backspace()">⌫</button>
+                <button class="operator" onclick="calc('%')">%</button>
+                <button class="operator" onclick="calc('/')">÷</button>
 
-        <button onclick="calc('4')">4</button>
-        <button onclick="calc('5')">5</button>
-        <button onclick="calc('6')">6</button>
-        <button class="operator" onclick="calc('-')">−</button>
+                <button onclick="calc('7')">7</button>
+                <button onclick="calc('8')">8</button>
+                <button onclick="calc('9')">9</button>
+                <button class="operator" onclick="calc('*')">×</button>
 
-        <button onclick="calc('1')">1</button>
-        <button onclick="calc('2')">2</button>
-        <button onclick="calc('3')">3</button>
-        <button class="operator" onclick="calc('+')">+</button>
+                <button onclick="calc('4')">4</button>
+                <button onclick="calc('5')">5</button>
+                <button onclick="calc('6')">6</button>
+                <button class="operator" onclick="calc('-')">−</button>
 
-        <button class="zero" onclick="calc('0')">0</button>
-        <button onclick="calc('.')">.</button>
-        <button class="equal" onclick="calculate()">=</button>
+                <button onclick="calc('1')">1</button>
+                <button onclick="calc('2')">2</button>
+                <button onclick="calc('3')">3</button>
+                <button class="operator" onclick="calc('+')">+</button>
+
+                <button class="zero" onclick="calc('0')">0</button>
+                <button onclick="calc('.')">.</button>
+                <button class="equal" onclick="calculate()">=</button>
+
+            </div>
+
+        </div>
 
     </div>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
